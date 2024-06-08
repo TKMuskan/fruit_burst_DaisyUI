@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fruit Burst</title>
+  <link rel="shortcut icon" href="logo/logo.png" type="image/x-icon">
+  <!-- Tailwind CSS and DaisyUI CDN-->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.10.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lato Fonts Link -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+    rel="stylesheet">
+  <!-- Custom colors -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: '#da373d',
+            'key-color': '#F85559',
+            'footer-color': '#121212'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .lato-thin {
+      font-family: "Lato", sans-serif;
+      font-weight: 100;
+      font-style: normal;
+    }
+
+    .lato-light {
+      font-family: "Lato", sans-serif;
+      font-weight: 300;
+      font-style: normal;
+    }
+
+    .lato-regular {
+      font-family: "Lato", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    .lato-bold {
+      font-family: "Lato", sans-serif;
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    .lato-black {
+      font-family: "Lato", sans-serif;
+      font-weight: 900;
+      font-style: normal;
+    }
+
+    .lato-thin-italic {
+      font-family: "Lato", sans-serif;
+      font-weight: 100;
+      font-style: italic;
+    }
+
+    .lato-light-italic {
+      font-family: "Lato", sans-serif;
+      font-weight: 300;
+      font-style: italic;
+    }
+
+    .lato-regular-italic {
+      font-family: "Lato", sans-serif;
+      font-weight: 400;
+      font-style: italic;
+    }
+
+    .lato-bold-italic {
+      font-family: "Lato", sans-serif;
+      font-weight: 700;
+      font-style: italic;
+    }
+
+    .lato-black-italic {
+      font-family: "Lato", sans-serif;
+      font-weight: 900;
+      font-style: italic;
+    }
+  </style>
+
+</head>
+
+<body>
+  <header class="container mx-auto px-4">
+    <nav class="">
+      <div
+        class="flex justify-between lg:justify-between items-center pt-5 lg:bg-key-color rounded-full lg:mt-3 lg:py-5 lg:px-10">
+        <div class="flex gap-1 justify-center items-center lato-bold lg:order-2">
+          <div>
+            <img class="h-6 w-6 lg:h-10 lg:w-10" src="logo/logo.png" alt="">
+          </div>
+          <div>
+            <p class="text-lg lg:text-2xl lg:text-white">Fruit Burst</p>
+          </div>
+        </div>
+        <div class="dropdown dropdown-bottom dropdown-end lg:hidden">
+          <div tabindex="0" role="button" class="btn bg-transparent border-none shadow-none m-1"><img class="h-4 w-5"
+              src="icon/menu.png" alt=""></div>
+          <ul tabindex="0"
+            class="dropdown-content z-[1] menu p-2 bg-base-100 rounded-box w-52 drop-shadow-xl bg-key-color text-white">
+            <li><a>Home</a></li>
+            <li><a>About Us</a></li>
+            <li><a>Shop</a></li>
+            <li><a>All Fruits</a></li>
+          </ul>
+        </div>
+
+
+        <div class="lg-list lg:order-1 hidden lg:inline-block">
+          <ul class="flex gap-6 xl:gap-8 justify-center items-center text-white lato-regular text-sm">
+            <li><a>Home</a></li>
+            <li><a>About Us</a></li>
+            <li><a>Shop</a></li>
+            <li><a>All Fruits</a></li>
+          </ul>
+        </div>
+        <div class="hidden lg:inline-block lg:order-3">
+          <div class="relative flex items-center justify-end">
+            <input type="text" placeholder="Search here" name="#" id="#"
+              class="h-8 w-64 xl:w-72 text-sm rounded-3xl pl-3 py-5 placeholder-gray-400 border-none focus:ring-purple-300 focus:ring-2 outline-none">
+            <div class="absolute mr-3 ">
+              <img class="h-4 w-4" src="icon/search.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <section class="header lg:pt-8 relative">
+      <div class="carousel w-full h-[30vh] lg:h-[55vh]  rounded-lg">
+        <div id="slide1" class="carousel-item relative w-full">
+          <img src="images/banner1.png" class="w-full" />
+          <div class=" absolute bg-gradient-to-b from-gray-900 w-full inset-0"></div>
+          <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+            <a href="#slide4" class="btn btn-circle hover:bg-amber-800 bg-slate-950 text-white border-none">❮</a>
+            <div class="text-center text-white">
+              <h1 class="text-xl lato-bold md:text-3xl lg:text-5xl xl:text-6xl 2xl:text-7xl">Exotic tastes at your <br>
+                doorstep</h1>
+              <p class=" text-sm lg:text-lg xl:text-xl py-3 lg:py-4">We supply highly quality organic products</p>
+              <button
+                class="bg-key-color text-xs lg:text-base py-3 px-4 md:px-6 lg:px-8 rounded-lg lato-bold text-center">Shop
+                Now</button>
+            </div>
+            <a href="#slide2" class="btn btn-circle hover:bg-amber-800 bg-slate-950 text-white border-none">❯</a>
+          </div>
+        </div>
+        <div id="slide2" class="carousel-item relative w-full">
+          <img src="images/banner2.png" class="w-full" />
+          <div class=" absolute bg-gradient-to-b from-gray-900 w-full inset-0"></div>
+          <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+            <a href="#slide1" class="btn btn-circle hover:bg-amber-800 bg-slate-950 text-white border-none">❮</a>
+            <div class="text-center text-white">
+              <h1 class="text-xl lato-bold md:text-3xl lg:text-5xl xl:text-6xl 2xl:text-7xl">Exotic tastes at your <br>
+                doorstep</h1>
+              <p class=" text-sm lg:text-lg xl:text-xl py-3 lg:py-4">We supply highly quality organic products</p>
+              <button
+                class="bg-key-color text-xs lg:text-base py-3 px-4 md:px-6 lg:px-8 rounded-lg lato-bold text-center">Shop
+                Now</button>
+            </div>
+            <a href="#slide3" class="btn btn-circle hover:bg-amber-800 bg-slate-950 text-white border-none">❯</a>
+          </div>
+        </div>
+        <div id="slide3" class="carousel-item relative w-full">
+          <img src="images/banner3.png" class="w-full" />
+          <div class=" absolute bg-gradient-to-b from-gray-900 w-full inset-0"></div>
+          <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+            <a href="#slide2" class="btn btn-circle hover:bg-amber-800 bg-slate-950 text-white border-none">❮</a>
+            <div class="text-center text-white">
+              <h1 class="text-xl lato-bold md:text-3xl lg:text-5xl xl:text-6xl 2xl:text-7xl">Exotic tastes at your <br>
+                doorstep</h1>
+              <p class=" text-sm lg:text-lg xl:text-xl py-3 lg:py-4">We supply highly quality organic products</p>
+              <button
+                class="bg-key-color text-xs lg:text-base py-3 px-4 md:px-6 lg:px-8 rounded-lg lato-bold text-center">Shop
+                Now</button>
+            </div>
+            <a href="#slide4" class="btn btn-circle hover:bg-amber-800 bg-slate-950 text-white border-none">❯</a>
+          </div>
+        </div>
+        <div id="slide4" class="carousel-item relative w-full">
+          <img src="images/banner4.png" class="w-full" />
+          <div class=" absolute bg-gradient-to-b from-gray-900 w-full inset-0"></div>
+          <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+            <a href="#slide3" class="btn btn-circle hover:bg-amber-800 bg-slate-950 text-white border-none">❮</a>
+            <div class="text-center text-white">
+              <h1 class="text-xl lato-bold md:text-3xl lg:text-5xl xl:text-6xl 2xl:text-7xl">Exotic tastes at your <br>
+                doorstep</h1>
+              <p class=" text-sm lg:text-lg xl:text-xl py-3 lg:py-4">We supply highly quality organic products</p>
+              <button
+                class="bg-key-color text-xs lg:text-base py-3 px-4 md:px-6 lg:px-8 rounded-lg lato-bold text-center">Shop
+                Now</button>
+            </div>
+            <a href="#slide1" class="btn btn-circle hover:bg-amber-800 bg-slate-950 text-white border-none">❯</a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="hidden md:inline-block absolute inset-x-16 md:-bottom-16 lg:-bottom-20 xl:-bottom-24 xl:px-32 2xl:px-52 drop-shadow-xl">
+        <ul
+          class="gap-8 lg:gap-14 2xl:gap-16 flex justify-center items-center py-5 px-10 2xl:py-10 bg-white rounded-xl mt">
+          <li><a href="#"><img class="w-16 h-14 lg:w-24 lg:h-20" src="images/fruit1.png" alt="fruit image">
+              <p class="text-xs text-center lg:text-base lato-regular">Red Grapes</p>
+            </a></li>
+          <li><a href="#"><img class="w-16 h-14 lg:w-24 lg:h-20" src="images/fruit2.png" alt="fruit image">
+              <p class="text-xs text-center lg:text-base lato-regular">Orange</p>
+            </a></li>
+          <li><a href="#"><img class="w-16 h-14 lg:w-24 lg:h-20" src="images/fruit3.png" alt="fruit image">
+              <p class="text-xs text-center lg:text-base lato-regular">Mango</p>
+            </a></li>
+          <li><a href="#"><img class="w-16 h-14 lg:w-24 lg:h-20" src="images/fruit4.png" alt="fruit image">
+              <p class="text-xs text-center lg:text-base lato-regular">Strawberry</p>
+            </a></li>
+          <li><a href="#"><img class="w-16 h-14 lg:w-24 lg:h-20" src="images/fruit5.png" alt="fruit image">
+              <p class="text-xs text-center lg:text-base lato-regular">Pomegranate</p>
+            </a></li>
+        </ul>
+      </div>
+    </section>
+  </header>
+  <main class="container mx-auto px-4 md:mt-20 lg:mt-32 xl:mt-44">
+    <!-- Deal of the Day section -->
+    <section class="py-5 px-6  md:px-20 lg:px-0 text-center">
+      <div class="lg:flex lg:justify-center lg:items-center lg:gap-10">
+        <div class="text-center lg:text-left lg:pr-52 2xl:pr-96">
+          <h2 class="lato-bold text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl">Deal of the day</h2>
+          <p class="lato-regular text-xs xl:text-sm 2xl:text-base text-gray-500 py-2 2xl:py-4 tracking-wider">Contrary
+            to popular
+            belief, is
+            not
+            simply random text. It has roots in a piece of classical Latin literature from 45 BC,making it over 2000
+            years old.</p>
+        </div>
+        <div class="py-3">
+          <div
+            class="grid grid-flow-col gap-2 xl:gap-4 2xl:gap-5 text-center justify-center lg:justify-start items-center auto-cols-max">
+            <div class="flex flex-col justify-center items-center">
+              <span class="countdown lato-bold text-2xl xl:text-3xl 2xl:text-4xl py-2">
+                <span style="--value:15;"></span>
+              </span>
+              <p class="text-xs xl:text-sm 2xl:text-base text-gray-500">Days</p>
+            </div>
+            <div class="flex justify-center items-start -mt-4">
+              <img class="h-4" src="icon/dot.png" alt="">
+            </div>
+            <div class="flex flex-col justify-center items-center">
+              <span class="countdown lato-bold text-2xl xl:text-3xl 2xl:text-4xl py-2">
+                <span style="--value:10;"></span>
+              </span>
+              <p class="text-xs xl:text-sm 2xl:text-base text-gray-500">Hours</p>
+
+            </div>
+            <div class="flex justify-center items-start -mt-4">
+              <img class="h-4" src="icon/dot.png" alt="">
+            </div>
+            <div class="flex flex-col justify-center items-center">
+              <span class="countdown lato-bold text-2xl xl:text-3xl 2xl:text-4xl py-2">
+                <span style="--value:24;"></span>
+              </span>
+              <p class="text-xs xl:text-sm 2xl:text-base text-gray-500">Minutes</p>
+
+            </div>
+            <div class="flex justify-center items-start -mt-4">
+              <img class="h-4" src="icon/dot.png" alt="">
+            </div>
+            <div class="flex flex-col justify-center items-center">
+              <span class="countdown lato-bold text-2xl xl:text-3xl 2xl:text-4xl py-2">
+                <span style="--value:38;"></span>
+              </span>
+              <p class="text-xs xl:text-sm 2xl:text-base text-gray-500">Seconds</p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal Portion -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 py-5">
+        <!-- modal-1 -->
+        <div class="text-center">
+          <!-- Open the modal using ID.showModal() method -->
+          <button class="text-center border-2 w-full py-5 rounded-lg border-gray-100" onclick="my_modal_5.showModal()">
+            <div class="flex justify-center items-center">
+              <img class="h-20 w-20" src="images/fruit6.png" alt="">
+            </div>
+            <p class="py-3 lato-bold">12.90$ - 18.85$</p>
+            <div class="px-10">
+              <hr>
+            </div>
+            <p class="py-3 lato-regular text-sm lg:text-base 2xl:text-lg text-gray-500">Apples</p>
+            <div class="rating">
+              <input type="radio" name="rating-2" class="mask mask-star-2 bg-key-color" />
+              <input type="radio" name="rating-2"
+                class="mask mask-star-2 bg-gradient-to-r from-key-color from-50% to-red-200 to-50%" />
+              <input type="radio" name="rating-2" class="mask mask-star-2 bg-red-200" />
+              <input type="radio" name="rating-2" class="mask mask-star-2 bg-red-200" />
+              <input type="radio" name="rating-2" class="mask mask-star-2 bg-red-200" />
+            </div>
+            <br>
+            <a class="text-key-color lato-bold text-xs lg:text-sm hover:underline" href="#">Details</a>
+          </button>
+          <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+            <div class="modal-box">
+              <div class="flex justify-center items-center">
+                <img class="h-20 w-20 lg:h-32 lg:w-32 2xl:h-40 2xl:w-40 pb-3" src="images/fruit6.png" alt="">
+              </div>
+              <h3 class="font-bold text-lg xl:text-xl 2xl:text-2xl">Apples</h3>
+              <p class="py-4 md:px-20 xl:px-24 text-xs xl:text-sm 2xl:text-base text-gray-400">Professional employees
+                are there for
+                you to pick
+                the most amazing and
+                fresh
+                fruits.
+              </p>
+              <div class="grid justify-center items-center">
+                <div class="modal-action">
+                  <form method="dialog">
+                    <!-- if there is a button in form, it will close the modal -->
+                    <button
+                      class="bg-transparent border-key-color border-2 px-5 py-2 rounded-lg text-key-color lato-bold">Close</button>
+                    <button class="bg-key-color border-key-color border-2 px-5 py-2 rounded-lg text-white lato-bold">Buy
+                      Now</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </dialog>
+        </div>
+        <!-- modal-2 -->
+        <div class="text-center">
+          <!-- Open the modal using ID.showModal() method -->
+          <button class="text-center border-2 w-full py-5 rounded-lg border-gray-100" onclick="my_modal_4.showModal()">
+            <div class="flex justify-center items-center">
+              <img class="h-20 w-20" src="images/fruit7.png" alt="">
+            </div>
+            <p class="py-3 lato-bold">12.90$ - 18.85$</p>
+            <div class="px-10">
+              <hr>
+            </div>
+            <p class="py-3 lato-regular text-sm lg:text-base 2xl:text-lg text-gray-500">Orange</p>
+            <div class="rating">
+              <input type="radio" name="rating-2" class="mask mask-star-2 bg-key-color" />
+              <input type="radio" name="rating-2"
+                class="mask mask-star-2 bg-gradient-to-r from-key-color from-50% to-red-200 to-50%" />
+              <input type="radio" name="rating-2" class="mask mask-star-2 bg-red-200" />
+              <input type="radio" name="rating-2" class="mask mask-star-2 bg-red-200" />
+              <input type="radio" name="rating-2" class="mask mask-star-2 bg-red-200" />
+            </div>
+            <br>
+            <a class="text-key-color lato-bold text-xs lg:text-sm hover:underline" href="#">Details</a>
+          </button>
+          <dialog id="my_modal_4" class="modal modal-bottom sm:modal-middle">
+            <div class="modal-box">
+              <div class="flex justify-center items-center">
+                <img class="h-20 w-20 lg:h-32 lg:w-32 2xl:h-40 2xl:w-40 pb-3" src="images/fruit7.png" alt="">
+              </div>
+              <h3 class="font-bold text-lg xl:text-xl 2xl:text-2xl">Orange</h3>
+              <p class="py-4 md:px-20 xl:px-24 text-xs xl:text-sm 2xl:text-base text-gray-400">Professional employees
+                are there for
+                you to pick
+                the most amazing and fresh
+                fruits.
+              </p>
+              <div class="grid justify-center items-center">
+                <div class="modal-action ">
+                  <form method="dialog">
+                    <!-- if there is a button in form, it will close the modal -->
+                    <button
+                      class="bg-transparent border-key-color border-2 px-5 py-2 rounded-lg text-key-color lato-bold">Close</button>
+                    <button class="bg-key-color border-key-color border-2 px-5 py-2 rounded-lg text-white lato-bold">Buy
+                      Now</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </dialog>
+        </div>
+        <!-- modal-3 -->
+        <div class="text-center">
+          <!-- Open the modal using ID.showModal() method -->
+          <button class="text-center border-2 w-full py-5 rounded-lg border-gray-100" onclick="my_modal_3.showModal()">
+            <div class="flex justify-center items-center">
+              <img class="h-20 w-20" src="images/fruit8.png" alt="">
+            </div>
+            <p class="py-3 lato-bold">12.90$ - 18.85$</p>
+            <div class="px-10">
+              <hr>
+            </div>
+            <p class="py-3 lato-regular text-sm lg:text-base 2xl:text-lg text-gray-500">Red Dragon</p>
+            <div class="rating">
+              <input type="radio" name="rating-2" class="mask mask-star-2 bg-key-color" />
+              <input type="radio" name="rating-2"
+                class="mask mask-star-2 bg-gradient-to-r from-key-color from-50% to-red-200 to-50%" />
+              <input type="radio" name="rating-2" class="mask mask-star-2 bg-red-200" />
+              <input type="radio" name="rating-2" class="mask mask-star-2 bg-red-200" />
+              <input type="radio" name="rating-2" class="mask mask-star-2 bg-red-200" />
+            </div>
+            <br>
+            <a class="text-key-color lato-bold text-xs lg:text-sm hover:underline" href="#">Details</a>
+          </button>
+          <dialog id="my_modal_3" class="modal modal-bottom sm:modal-middle">
+            <div class="modal-box">
+              <div class="flex justify-center items-center">
+                <img class="h-20 w-20 lg:h-32 lg:w-32 2xl:h-40 2xl:w-40 pb-3" src="images/fruit8.png" alt="">
+              </div>
+              <h3 class="font-bold text-lg xl:text-xl 2xl:text-2xl">Red Dragon</h3>
+              <p class="py-4 md:px-20 xl:px-24 text-xs xl:text-sm 2xl:text-base text-gray-400">Professional employees
+                are there for
+                you to pick
+                the most amazing and fresh
+                fruits.
+              </p>
+              <div class="grid justify-center items-center">
+                <div class="modal-action ">
+                  <form method="dialog">
+                    <!-- if there is a button in form, it will close the modal -->
+                    <button
+                      class="bg-transparent border-key-color border-2 px-5 py-2 rounded-lg text-key-color lato-bold">Close</button>
+                    <button class="bg-key-color border-key-color border-2 px-5 py-2 rounded-lg text-white lato-bold">Buy
+                      Now</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </dialog>
+        </div>
+        <!-- modal-4 -->
+        <div class="text-center">
+          <!-- Open the modal using ID.showModal() method -->
+          <button class="text-center border-2 w-full py-5 rounded-lg border-gray-100" onclick="my_modal_2.showModal()">
+            <div class="flex justify-center items-center">
+              <img class="h-20 w-20" src="images/fruit9.png" alt="">
+            </div>
+            <p class="py-3 lato-bold">12.90$ - 18.85$</p>
+            <div class="px-10">
+              <hr>
+            </div>
+            <p class="py-3 lato-regular text-sm lg:text-base 2xl:text-lg text-gray-500">Banana</p>
+            <div class="rating">
+              <input type="radio" name="rating-2" class="mask mask-star-2 bg-key-color" />
+              <input type="radio" name="rating-2"
+                class="mask mask-star-2 bg-gradient-to-r from-key-color from-50% to-red-200 to-50%" />
+              <input type="radio" name="rating-2" class="mask mask-star-2 bg-red-200" />
+              <input type="radio" name="rating-2" class="mask mask-star-2 bg-red-200" />
+              <input type="radio" name="rating-2" class="mask mask-star-2 bg-red-200" />
+            </div>
+            <br>
+            <a class="text-key-color lato-bold text-xs lg:text-sm hover:underline" href="#">Details</a>
+          </button>
+          <dialog id="my_modal_2" class="modal modal-bottom sm:modal-middle">
+            <div class="modal-box">
+              <div class="flex justify-center items-center">
+                <img class="h-20 w-20 lg:h-32 lg:w-32 2xl:h-40 2xl:w-40 pb-3" src="images/fruit9.png" alt="">
+              </div>
+              <h3 class="font-bold text-lg xl:text-xl 2xl:text-2xl">Banana</h3>
+              <p class="py-4 md:px-20 xl:px-24 text-xs xl:text-sm 2xl:text-base text-gray-400">Professional employees
+                are there for
+                you to pick
+                the most amazing and fresh
+                fruits.
+              </p>
+              <div class="grid justify-center items-center">
+                <div class="modal-action ">
+                  <form method="dialog">
+                    <!-- if there is a button in form, it will close the modal -->
+                    <button
+                      class="bg-transparent border-key-color border-2 px-5 py-2 rounded-lg text-key-color lato-bold">Close</button>
+                    <button class="bg-key-color border-key-color border-2 px-5 py-2 rounded-lg text-white lato-bold">Buy
+                      Now</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </dialog>
+        </div>
+      </div>
+      <div class="py-5">
+        <button
+          class="bg-key-color text-xs lg:text-base py-3 px-4 md:px-6 lg:px-8 rounded-lg lato-bold text-center text-white">Shop
+          All</button>
+      </div>
+    </section>
+    <!-- Team section -->
+    <section class="container mx-auto">
+      <div class="bg-center bg-cover w-full  rounded-md relative" style="background-image: url('images/banner1.png');">
+        <div class="bg-center bg-cover w-full rounded-lg bg-slate-950 absolute opacity-60 inset-0"></div>
+
+        <div class="text-white text-center px-4 md:px-12 py-12 lg:py-16 xl:py-24 lg:space-y-4 isolate">
+          <h2 class="lato-bold text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl ">Meet the team section
+          </h2>
+          <p
+            class="lato-regular text-xs xl:text-sm 2xl:text-base py-2 2xl:py-4 tracking-wider text-center lg:mx-36 xl:mx-48 2xl:mx-72">
+            Contrary
+            to
+            popular belief, is not simply random text. It has roots in a piece of classical Latin literature from 45
+            BC,
+            making it over 2000 years old.</p>
+
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center items-center gap-y-10 py-8 md:mx-24 lg:gap-x-8">
+            <div class="flex flex-col justify-center items-center gap-4">
+              <div class="w-24 rounded-full">
+                <img src="images/member1.png" />
+              </div>
+              <div class="text-white text-center">
+                <p class="text-lg lato-bold">Awlad Hossain</p>
+                <p class="text-sm lato-regular">Fruits Expert</p>
+              </div>
+              <div class=" flex gap-3">
+                <div class="h-5 w-5"><img src="icon/facebook3.png" alt=""></div>
+                <div class="h-5 w-5"><img src="icon/twitter2.png" alt=""></div>
+                <div class="h-5 w-5"><img src="icon/linkedin 3.png" alt=""></div>
+              </div>
+            </div>
+            <div class="flex flex-col justify-center items-center gap-4">
+              <div class="w-24 rounded-full">
+                <img src="images/member2.png" />
+              </div>
+              <div class="text-white text-center">
+                <p class="text-lg lato-bold">Safia Chowdhury</p>
+                <p class="text-sm lato-regular">Fruits Expert</p>
+              </div>
+              <div class=" flex gap-3">
+                <div class="h-5 w-5"><img src="icon/facebook3.png" alt=""></div>
+                <div class="h-5 w-5"><img src="icon/twitter2.png" alt=""></div>
+                <div class="h-5 w-5"><img src="icon/linkedin 3.png" alt=""></div>
+              </div>
+            </div>
+            <div class="flex flex-col justify-center items-center gap-4">
+              <div class="w-24 rounded-full">
+                <img src="images/member3.png" />
+              </div>
+              <div class="text-white text-center">
+                <p class="text-lg lato-bold">Rokib Hossain</p>
+                <p class="text-sm lato-regular">Fruits Expert</p>
+              </div>
+              <div class=" flex gap-3">
+                <div class="h-5 w-5"><img src="icon/facebook3.png" alt=""></div>
+                <div class="h-5 w-5"><img src="icon/twitter2.png" alt=""></div>
+                <div class="h-5 w-5"><img src="icon/linkedin 3.png" alt=""></div>
+              </div>
+            </div>
+            <div class="flex flex-col justify-center items-center gap-4">
+              <div class="w-24 rounded-full">
+                <img src="images/member4.png" />
+              </div>
+              <div class="text-white text-center">
+                <p class="text-lg lato-bold">Chaity Anam</p>
+                <p class="text-sm lato-regular">Fruits Expert</p>
+              </div>
+              <div class=" flex gap-3">
+                <div class="h-5 w-5"><img src="icon/facebook3.png" alt=""></div>
+                <div class="h-5 w-5"><img src="icon/twitter2.png" alt=""></div>
+                <div class="h-5 w-5"><img src="icon/linkedin 3.png" alt=""></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer
+    class="mt-10 flex flex-col justify-center items-center footer footer-center bg-footer-color text-white py-10 lg:py-14 lg:h-[35vh]">
+    <div class="flex gap-1 2xl:gap-2 justify-center items-center lato-bold">
+      <div>
+        <img class="h-6 w-6 lg:h-10 lg:w-10 2xl:h-12 2xl:w-12" src="logo/logo.png" alt="">
+      </div>
+
+      <div>
+        <p class="text-lg lg:text-2xl 2xl:text-3xl lg:text-white">Fruit Burst</p>
+      </div>
+    </div>
+    <nav
+      class="grid gap-x-4s gap-y-5 grid-cols-4 md:grid-flow-col justify-center content-left text-xs xl:text-sm 2xl:text-base">
+      <a class="link link-hover">Home</a>
+      <a class="link link-hover">About Us</a>
+      <a class="link link-hover">Shop</a>
+      <a class="link link-hover">All fruits</a>
+      <a class="link link-hover"></a>
+      <a class="link link-hover">Support</a>
+      <a class="link link-hover hidden md:inline-block"></a>
+      <a class="link link-hover">My Account</a>
+      <a class="link link-hover"></a>
+    </nav>
+    <nav>
+      <div class="grid grid-flow-col justify-center items-center gap-5 lg:gap-6 2xl:gap-8">
+        <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+            class="fill-current w-4 h-4 lg:w-6 lg:h-6">
+            <path
+              d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z">
+            </path>
+          </svg></a>
+        <a><img class="w-4 h-4 lg:w-6 lg:h-6" src="icon/facebook.png" alt=""></a>
+        <a><img class="w-4 h-4 lg:w-6 lg:h-6" src="icon/youtube.png" alt=""></a>
+        <a><img class="w-4 h-4 lg:w-6 lg:h-6" src="icon/linkedin.png" alt=""></a>
+        <a><img class="w-4 h-4 lg:w-6 lg:h-6" src="icon/instagram.png" alt=""></a>
+        <a><img class="w-4 h-4 lg:w-6 lg:h-6" src="icon/apple.png" alt=""></a>
+      </div>
+    </nav>
+  </footer>
+</body>
+
+</html>
